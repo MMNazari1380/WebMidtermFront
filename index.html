@@ -3,43 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Lady or Gentleman?</title>
-    <link rel="stylesheet" type="text/css" href="style/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
 </head>
 <body>
     <div class="box">
         <div class="container">
             <div class="left-column">
               <h2>Mr. or Ms. ?</h2>
-              <form>
+              <form id="myForm" onsubmit="handleSubmit(event)">
                       <label for="name">Name:</label>
-                      <input type="text" id="name" name="name" required>
-
+                      <input type="text" id="textInput" name="textInput"required>
                       <div class="radio-group">
                           <label>
-                            <input type="radio" name="gender" value="male">
+                            <input type="radio" value="male" id="option1" name="apiOption">
                             Male
                           </label>
                       </div>
 
                       <div class="radio-group">
                           <label>
-                            <input type="radio" name="gender" value="female">
+                            <input type="radio" value="female" id="option2" name="apiOption">
                             Female
                           </label>
                       </div>
-
-                      <input type="submit" value="Submit">
+                      <button type="submit">Submit</button>
               </form>
               <input type="submit" value="Save">
             </div>
 
-            <div class="right-column">
+            <div class="right-column" >
+              <p id="response"></p>
+              <!--
               <h2>Prediction</h2>
               <p>Male</p>
               <p>0.97</p>
               <h2>Saved Answer</h2>
               <button>Clear</button>
+              -->
             </div>
+            <script type="text/javascript" src="js/script.js"></script>
+
         </div>
     </div>
 </body>
