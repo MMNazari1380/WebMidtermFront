@@ -13,37 +13,35 @@
               <h2>Mr. or Ms. ?</h2>
               <form id="myForm" onsubmit="handleSubmit(event)">
                       <label for="name">Name:</label>
-                      <input type="text" id="textInput" name="textInput"required>
+                      <input type="text" id="textInput" name="textInput" maxlength = "255" pattern="[A-Za-z\s]*" required>
                       <div class="radio-group">
                           <label>
-                            <input type="radio" value="male" id="option1" name="apiOption">
+                            <input type="radio" value="male" id="male radio" name="apiOption">
                             Male
                           </label>
                       </div>
 
                       <div class="radio-group">
                           <label>
-                            <input type="radio" value="female" id="option2" name="apiOption">
+                            <input type="radio" value="female" id="female radio" name="apiOption">
                             Female
                           </label>
                       </div>
-                      <button type="submit">Submit</button>
+                      <button type="submit" id="prediction">Submit</button>
+                          
               </form>
-              <input type="submit" value="Save">
+              <button onclick="handleSave(event)" id="save">Save</button>
             </div>
 
             <div class="right-column" >
-              <p id="response"></p>
-              <!--
               <h2>Prediction</h2>
-              <p>Male</p>
-              <p>0.97</p>
+              <p id="response gender"></p> 
+              <p id="response probability"></p>
               <h2>Saved Answer</h2>
-              <button>Clear</button>
-              -->
+              <p id="saved"></p>
+              <button id="clear" onclick="handleClear(event)">Clear</button>
             </div>
             <script type="text/javascript" src="js/script.js"></script>
-
         </div>
     </div>
 </body>
