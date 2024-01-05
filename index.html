@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lady or Gentleman?</title>
+    <title>Gender Prediction WebPage</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    
 </head>
 <body>
     <div class="box">
@@ -13,17 +12,17 @@
               <h2>Mr. or Ms. ?</h2>
               <form id="myForm" onsubmit="handleSubmit(event)">
                       <label for="name">Name:</label>
-                      <input type="text" id="textInput" name="textInput" maxlength = "255" pattern="[A-Za-z\s]*" required>
+                      <input type="text" onchange="savedStorage(event)" id="textInput" name="textInput" maxlength = "255" pattern="[A-Za-z\s]*" required>
                       <div class="radio-group">
                           <label>
-                            <input type="radio" value="male" id="male radio" name="apiOption">
+                            <input type="radio" value="male" id="male radio" name="apiOption" >
                             Male
                           </label>
                       </div>
 
                       <div class="radio-group">
                           <label>
-                            <input type="radio" value="female" id="female radio" name="apiOption">
+                            <input type="radio" value="female" id="female radio" name="apiOption" >
                             Female
                           </label>
                       </div>

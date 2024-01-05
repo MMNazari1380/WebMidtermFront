@@ -6,19 +6,25 @@ function handleSave(){
   let radioMale = document.getElementById('male radio').checked;
   let radioFemale = document.getElementById('female radio').checked;
   
-  if(paragraphInput.textContent == ""){
-    if (radioMale== true){
-      localStorage.setItem(textInput.value, "male");
-    }
-    else if (radioFemale == true){
-      localStorage.setItem(textInput.value, "female");
-    }
+  if (radioMale == true){
+    localStorage.setItem(textInput.value, "male");
   }
-  else {
-    localStorage.setItem(textInput.value, paragraphInput.textContent);
+  else if (radioFemale == true){
+    localStorage.setItem(textInput.value, "female");
+  }
+  else{
+    if (paragraphInput.textContent == "The name provided doesn't exist in API database.") {
+      document.getElementById('response gender').innerHTML = "The name provided doesn't exist in API database.";
+    }
+    else if (paragraphInput.textContent == ""){
+      document.getElementById('response gender').innerHTML = "There is no name provided by API to store.";;
+    }
+    else {
+      localStorage.setItem(textInput.value, paragraphInput.textContent);
+    }
   }
 
-  savedStoage();
+  savedStorage();
 }
 
 function handleClear(){
@@ -43,11 +49,16 @@ function handleSubmit(event) {
         return response.json();
       })
       .then(data => {
-        const responseElementGender = document.getElementById('response gender');
-        responseElementGender.innerHTML = JSON.stringify(data.gender);
-  
-        const responseElementProbability = document.getElementById('response probability');
-        responseElementProbability.innerHTML = JSON.stringify(data.probability);
+        if (JSON.stringify(data.gender) == "null"){
+          document.getElementById('response gender').innerHTML = "The name provided doesn't exist in API database.";
+        }
+        else{
+          const responseElementGender = document.getElementById('response gender');
+          responseElementGender.innerHTML = JSON.stringify(data.gender);
+    
+          const responseElementProbability = document.getElementById('response probability');
+          responseElementProbability.innerHTML = JSON.stringify(data.probability);
+        }
       })
       .catch(error => console.error('Error:', error));
 
@@ -58,7 +69,7 @@ function handleSubmit(event) {
 
 document.getElementById('myForm').addEventListener('submit', handleSubmit);
 
-function savedStoage(){
+function savedStorage(){
   let textInput = document.getElementById('textInput').value;
   // Check if local storage is supported
   if (typeof(Storage) !== "undefined") {
