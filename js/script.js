@@ -15,9 +15,11 @@ function handleSave(){
   else{
     if (paragraphInput.textContent == "The name provided doesn't exist in API database.") {
       document.getElementById('response gender').innerHTML = "The name provided doesn't exist in API database.";
+      document.getElementById('response probability').innerHTML = "";
     }
     else if (paragraphInput.textContent == ""){
-      document.getElementById('response gender').innerHTML = "There is no name provided by API to store.";;
+      document.getElementById('response gender').innerHTML = "There is no name provided by API to store.";
+      document.getElementById('response probability').innerHTML = "";
     }
     else {
       localStorage.setItem(textInput.value, paragraphInput.textContent);
@@ -51,6 +53,7 @@ function handleSubmit(event) {
       .then(data => {
         if (JSON.stringify(data.gender) == "null"){
           document.getElementById('response gender').innerHTML = "The name provided doesn't exist in API database.";
+          document.getElementById('response probability').innerHTML = "";
         }
         else{
           const responseElementGender = document.getElementById('response gender');
