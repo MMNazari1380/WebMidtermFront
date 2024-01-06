@@ -10,11 +10,11 @@ function handleSave(){
   
   // If male radio button is checked, store the text input with value "male" in the local storage
   if (radioMale == true){
-    localStorage.setItem(textInput.value, "male");
+    localStorage.setItem(textInput, "male");
   }
   // If female radio button is checked, store the text input with value "female" in the local storage
   else if (radioFemale == true){
-    localStorage.setItem(textInput.value, "female");
+    localStorage.setItem(textInput, "female");
   }
   // If neither male nor female radio is checked
   else{
@@ -35,7 +35,7 @@ function handleSave(){
     // If none of the above conditions are met
     else if (paragraphInput.textContent == "male" || paragraphInput.textContent == "female"){
       // Store the text input value with the content of the response gender paragraph in the local storage
-      localStorage.setItem(textInput.value, paragraphInput.textContent);
+      localStorage.setItem(textInput, paragraphInput.textContent);
     }
     else {
             // Set the response gender paragraph to an error message
@@ -116,7 +116,7 @@ function savedStorage() {
   
   if (typeof(Storage) !== "undefined") {
     // Checks if local storage is supported by the current browser
-    var savedItem = localStorage.getItem(textInput.value);
+    var savedItem = localStorage.getItem(textInput);
     // Retrieves the item with key as the value of the text input from local storage
 
     if (savedItem) {
