@@ -1,47 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Gender Prediction WebPage</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+<!DOCTYPE html>  <!-- This line declares the document type and version of HTML -->
+
+<html lang="en">  <!-- This tag defines the beginning of the HTML document and sets the language to English -->
+
+<head>  <!-- This tag contains meta-information about the HTML document and links to external resources -->
+
+    <meta charset="UTF-8">  <!-- This meta tag specifies the character encoding for the document -->
+
+    <title>Gender Prediction WebPage</title>  <!-- This tag sets the title of the HTML document -->
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css">  <!-- This tag links the HTML document to an external stylesheet -->
+
 </head>
-<body>
-    <div class="box">
-        <div class="container">
-            <div class="left-column">
-              <h2>Mr. or Ms. ?</h2>
-              <form id="myForm" onsubmit="handleSubmit(event)">
-                      <label for="name">Name:</label>
-                      <input type="text" onchange="savedStorage(event)" id="textInput" name="textInput" maxlength = "255" pattern="[A-Za-z\s]*" required>
-                      <div class="radio-group">
-                          <label>
-                            <input type="radio" value="male" id="male radio" name="apiOption" >
-                            Male
+
+<body>  <!-- This tag contains the content of the HTML document -->
+
+    <div class="box">  <!-- This tag creates a container with the class "box" -->
+
+        <div class="container">  <!-- This tag creates a container with the class "container" -->
+
+            <div class="left-column">  <!-- This tag creates a container with the class "left-column" -->
+
+              <h2>Mr. or Ms. ?</h2>  <!-- This tag creates a heading with the text "Mr. or Ms. ?" -->
+
+              <form id="myForm" onsubmit="handleSubmit(event)">  <!-- This tag creates a form with the id "myForm" and specifies the submission event handler -->
+
+                      <label for="name">Name:</label>  <!-- This tag creates a label for an input field with the id "name" -->
+
+                      <input type="text" onchange="savedStorage(event)" id="textInput" name="textInput" maxlength = "255" pattern="[A-Za-z\s]*" required>  <!-- This tag creates a text input field with the id "textInput" and specifies event handlers, attributes, and restrictions -->
+
+                      <div class="radio-group">  <!-- This tag creates a container with the class "radio-group" for radio buttons -->
+
+                          <label>  <!-- This tag creates a label for a radio button -->
+
+                            <input type="radio" value="male" id="male radio" name="apiOption" >  <!-- This tag creates a radio button with the value "male" and the id "male radio" within the group "apiOption" -->
+
+                            Male  <!-- This text is displayed as the label for the radio button -->
+
                           </label>
+
                       </div>
 
-                      <div class="radio-group">
-                          <label>
-                            <input type="radio" value="female" id="female radio" name="apiOption" >
-                            Female
+                      <div class="radio-group">  <!-- This tag creates another container with the class "radio-group" for radio buttons -->
+
+                          <label>  <!-- This tag creates a label for a radio button -->
+
+                            <input type="radio" value="female" id="female radio" name="apiOption" >  <!-- This tag creates a radio button with the value "female" and the id "female radio" within the group "apiOption" -->
+
+                            Female  <!-- This text is displayed as the label for the radio button -->
+
                           </label>
+
                       </div>
-                      <button type="submit" id="prediction">Submit</button>
-                          
+
+                      <button type="submit" id="prediction">Submit</button>  <!-- This tag creates a submit button with the id "prediction" -->
+
               </form>
-              <button onclick="handleSave(event)" id="save">Save</button>
+
+              <button onclick="handleSave(event)" id="save">Save</button> <!-- This tag creates a button with an onclick event handler and the id "save" -->
+
             </div>
 
-            <div class="right-column" >
-              <h2>Prediction</h2>
-              <p id="response gender"></p> 
-              <p id="response probability"></p>
-              <h2>Saved Answer</h2>
-              <p id="saved"></p>
-              <button id="clear" onclick="handleClear(event)">Clear</button>
+            <div class="right-column" >  <!-- This tag creates a container with the class "right-column" -->
+
+              <h2>Prediction</h2>  <!-- This tag creates a heading with the text "Prediction" -->
+
+              <p id="response gender"></p>  <!-- This tag creates an empty paragraph element with the id "response gender" -->
+
+              <p id="response probability"></p>  <!-- This tag creates an empty paragraph element with the id "response probability" -->
+
+              <h2>Saved Answer</h2>  <!-- This tag creates a heading with the text "Saved Answer" -->
+
+              <p id="saved"></p>  <!-- This tag creates an empty paragraph element with the id "saved" -->
+
+              <button id="clear" onclick="handleClear(event)">Clear</button>  <!-- This tag creates a button with the id "clear" and an onclick event handler -->
+
             </div>
-            <script type="text/javascript" src="js/script.js"></script>
+
+            <script type="text/javascript" src="js/script.js"></script>  <!-- This tag links the HTML document to an external JavaScript file -->
+
         </div>
+
     </div>
+
 </body>
+
 </html>
+
+
+
+

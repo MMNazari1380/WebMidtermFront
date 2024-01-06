@@ -1,64 +1,65 @@
 body {
-  background-image: url('../image/gender.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-image: url('../image/gender.jpg'); /* sets the background image for the entire body */
+  background-repeat: no-repeat; /* prevents the background image from repeating */
+  background-size: cover; /* ensures that the background image covers the entire background */
+  background-position: center; /* positions the background image at the center */
 }
 
-.box{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.box {
+  display: flex; /* sets the box to use the flexbox layout */
+  justify-content: center; /* aligns the content of the box horizontally to the center */
+  align-items: center; /* aligns the content of the box vertically to the center */
+  height: 100vh; /* sets the height of the box to be 100% of the viewport height */
 }
+
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  border: 2px solid black;
-  box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.85);
+  display: flex; /* sets the container to use the flexbox layout */
+  justify-content: center; /* aligns the content of the container horizontally to the center */
+  align-items: center; /* aligns the content of the container vertically to the center */
+  height: 50vh; /* sets the height of the container to be 50% of the viewport height */
+  border: 2px solid black; /* adds a 2px solid black border around the container */
+  box-sizing: border-box; /* includes the border and padding in the container's total width and height */
+  background-color: rgba(255, 255, 255, 0.85); /* sets the background color of the container with 85% opacity */
 }
 
 .left-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
+  display: flex; /* Specifies the element as a flex container */
+  flex-direction: column; /* Sets the direction of the flex container's main axis to be vertical */
+  justify-content: center; /* Aligns the flex items along the vertical axis at the center */
+  align-items: flex-start; /* Aligns the flex items along the horizontal axis at the start */
+  padding: 20px; /* Adds 20 pixels of padding to all sides of the element */
 }
 
 .right-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  /*width:200px;*/
+  display: flex; /* Specifies the element as a flex container */
+  flex-direction: column; /* Sets the direction of the flex container's main axis to be vertical */
+  justify-content: center; /* Aligns the flex items along the vertical axis at the center */
+  align-items: flex-start; /* Aligns the flex items along the horizontal axis at the start */
+  padding: 20px; /* Adds 20 pixels of padding to all sides of the element */
+  /*width:200px;*/ /* Optionally sets the width of the element to 200 pixels */
 }
 
 .radio-group {
-  display: flex;
-  align-items: center;
+  display: flex; /* Specifies the element as a flex container */
+  align-items: center; /* Aligns the flex items along the horizontal axis at the center */
 }
 
 .radio-group label {
-  margin-right: 10px;
+  margin-right: 10px; /* Adds 10 pixels of margin to the right side of the label elements within the radio-group */
 }
 
 input {
-  margin: 10px;
+  margin: 10px; /* Adds 10 pixels of margin to all sides of the input elements */
 }
 
-button{
-  margin: 10px;
+button {
+  margin: 10px; /* Adds 10 pixels of margin to all sides of the button elements */
 }
 
 h2 {
-  margin: 10px;
+  margin: 10px; /* Adds 10 pixels of margin to all sides of the h2 elements */
 }
 
-label{
-  margin: 10px;
+label {
+  margin: 10px; /* Adds 10 pixels of margin to all sides of the label elements */
 }
