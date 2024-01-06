@@ -33,9 +33,15 @@ function handleSave(){
       document.getElementById('response probability').innerHTML = "";
     }
     // If none of the above conditions are met
-    else {
+    else if (paragraphInput.textContent == "male" || paragraphInput.textContent == "female"){
       // Store the text input value with the content of the response gender paragraph in the local storage
       localStorage.setItem(textInput.value, paragraphInput.textContent);
+    }
+    else {
+            // Set the response gender paragraph to an error message
+            document.getElementById('response gender').innerHTML = "API call failed.";
+            // Clear the response probability paragraph
+            document.getElementById('response probability').innerHTML = "";
     }
   }
 
@@ -85,7 +91,7 @@ function handleSubmit(event) {
       else{
         // Update the HTML content of an element with the id "response gender" to show the gender from the API response
         const responseElementGender = document.getElementById('response gender');
-        responseElementGender.innerHTML = JSON.stringify(data.gender);
+        responseElementGender.innerHTML = data.gender;
   
         // Update the HTML content of an element with the id "response probability" to show the probability from the API response
         const responseElementProbability = document.getElementById('response probability');
@@ -93,7 +99,12 @@ function handleSubmit(event) {
       }
     })
     // Handle any errors that occurred during the fetch or data processing
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+      // Show error message in response gender part
+      document.getElementById('response gender').innerHTML = error.message;
+      // Clear the HTML content of an element with the id "response probability"
+      document.getElementById('response probability').innerHTML = "";
+    });
 }
 
 // Add an event listener to the form with the id "myForm" to handle the form submission
