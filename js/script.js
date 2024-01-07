@@ -50,8 +50,9 @@ function handleSave(){
 }
 
 function handleClear(){
+  let textInput = document.getElementById('textInput').value;
   // Clear all items from local storage
-  localStorage.clear();
+  localStorage.removeItem(textInput);
   // Update the text content of an element with the id "saved" to notify the user that local storage has been cleared
   document.getElementById("saved").innerText = "Local storage has been cleared";
 }
